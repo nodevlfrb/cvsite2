@@ -1,7 +1,3 @@
-from pathlib import Path
-
-# Re-create HTML content after reset
-html_finistere_with_bg = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +6,8 @@ html_finistere_with_bg = """
   <title>Noé DÉVERCHÈRE - Portfolio</title>
   <style>
     @font-face {
-      font-family: 'Computer Modern Sans';
-      src: url('fonts/cmunss.ttf') format('truetype');
+      font-family: 'EB Garamond Regular';
+      src: url('fonts/EBGaramond08-Regular.ttf') format('truetype');
     }
 
     * {
@@ -176,9 +172,3 @@ html_finistere_with_bg = """
   </div>
 </body>
 </html>
-"""
-
-# Save HTML file
-file_path = Path("/mnt/data/index_finistere_background.html")
-file_path.write_text(html_finistere_with_bg, encoding="utf-8")
-file_path.name
