@@ -1,39 +1,59 @@
 from pathlib import Path
 
-# Mise à jour du fichier HTML avec la palette “Finistère Futur” et police Computer Modern Sans Serif
-html_palette_finistere = """
+# Re-create HTML content after reset
+html_finistere_with_bg = """
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noé DÉVERCHÈRE - Portfolio</title>
-  <link href="https://fonts.cdnfonts.com/css/computer-modern" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
+    @font-face {
+      font-family: 'Computer Modern Sans';
+      src: url('fonts/cmunss.ttf') format('truetype');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Computer Modern Sans', sans-serif;
-      background: #e5f6ff;
+      background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #495057;
     }
+
     .overlay {
       background-color: rgba(255, 255, 255, 0.88);
       min-height: 100vh;
       padding: 40px 20px;
     }
+
     header {
       text-align: center;
       color: #014f86;
       margin-bottom: 40px;
     }
-    header h1 { margin: 0; font-size: 3rem; }
-    header p { font-size: 1.2rem; color: #495057; }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #495057;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
+
     .card {
       background-color: #f8f9fa;
       border-radius: 12px;
@@ -43,21 +63,34 @@ html_palette_finistere = """
       flex-direction: column;
       transition: transform 0.3s ease;
     }
-    .card:hover { transform: translateY(-5px); }
-    .card.large { grid-column: span 2; }
-    .card.tall { grid-row: span 2; }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card.large {
+      grid-column: span 2;
+    }
+
+    .card.tall {
+      grid-row: span 2;
+    }
+
     .card img {
       width: 100%;
       display: block;
       object-fit: cover;
     }
+
     .card-content {
       padding: 1rem;
     }
+
     .card-content h2 {
       margin-top: 0;
       color: #014f86;
     }
+
     .cv-button {
       display: inline-block;
       margin-top: 10px;
@@ -68,12 +101,14 @@ html_palette_finistere = """
       border-radius: 5px;
       font-weight: bold;
     }
+
     footer {
       text-align: center;
       margin-top: 40px;
       font-size: 0.9em;
       color: #666;
     }
+
     footer a {
       color: #014f86;
       text-decoration: none;
@@ -85,65 +120,65 @@ html_palette_finistere = """
   <div class="overlay">
     <header>
       <h1>Noé DÉVERCHÈRE</h1>
-      <p>Portfolio professionnel – CV, expériences & visuels</p>
+      <p>Professional portfolio – CV, experience & visuals</p>
     </header>
     <div class="grid">
       <div class="card large">
-        <img src="https://source.unsplash.com/800x400/?reception" alt="Accueil" />
+        <img src="https://source.unsplash.com/800x400/?reception" alt="Reception" />
         <div class="card-content">
-          <h2>Expérience à l'Hôtel Alamanda</h2>
-          <p>Stage à La Réunion – Réception, accueil client, gestion administrative.</p>
+          <h2>Experience at Hôtel Alamanda</h2>
+          <p>Internship in La Réunion – Front desk, client reception, operations support.</p>
         </div>
       </div>
       <div class="card">
         <div class="card-content">
-          <h2>Mon CV</h2>
-          <p>Découvrez mon parcours en téléchargeant mon CV.</p>
-          <a href="cv_victoria.pdf" class="cv-button" download>Télécharger le CV</a>
+          <h2>My CV</h2>
+          <p>Download my CV to discover my full professional background.</p>
+          <a href="cv_victoria.pdf" class="cv-button" download>Download CV</a>
         </div>
       </div>
       <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?travel" alt="Voyage" />
+        <img src="https://source.unsplash.com/600x900/?travel" alt="Travel" />
       </div>
       <div class="card">
         <div class="card-content">
-          <h2>À propos</h2>
-          <p>Passionnée par le tourisme, le service client et les voyages authentiques.</p>
+          <h2>About Me</h2>
+          <p>Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.</p>
         </div>
       </div>
       <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?event,hospitality" alt="Événementiel" />
+        <img src="https://source.unsplash.com/600x900/?aerospace" alt="Aerospace" />
       </div>
       <div class="card large">
         <div class="card-content">
-          <h2>Expériences variées</h2>
+          <h2>Various Experiences</h2>
           <ul>
-            <li>Hôtellerie 3*</li>
-            <li>Salons professionnels</li>
-            <li>Animation touristique</li>
+            <li>Naval architecture</li>
+            <li>Python & Jupyter tools</li>
+            <li>Fluid mechanics & cavitation</li>
           </ul>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?client-service" alt="Service client" />
+        <img src="https://source.unsplash.com/600x400/?client-service" alt="Client Service" />
       </div>
       <div class="card">
         <div class="card-content">
           <h2>Contact</h2>
-          <p>📧 <a href="mailto:victoria@email.com">victoria@email.com</a><br />
-             💼 <a href="https://www.linkedin.com/in/victoria">LinkedIn</a></p>
+          <p>📧 <a href="mailto:noe.deverchere@etu.isae-ensma.fr">noe.deverchere@etu.isae-ensma.fr</a><br />
+             💼 <a href="https://www.linkedin.com/in/noe-deverchere">LinkedIn</a></p>
         </div>
       </div>
     </div>
     <footer>
-      <p>© 2025 Noé DÉVERCHÈRE — <a href="mailto:victoria@email.com">Me contacter</a></p>
+      <p>© 2025 Noé DÉVERCHÈRE — <a href="mailto:noe.deverchere@etu.isae-ensma.fr">Contact me</a></p>
     </footer>
   </div>
 </body>
 </html>
 """
 
-# Sauvegarde du fichier
-file_path = Path("/mnt/data/index_finistere_palette.html")
-file_path.write_text(html_palette_finistere, encoding="utf-8")
+# Save HTML file
+file_path = Path("/mnt/data/index_finistere_background.html")
+file_path.write_text(html_finistere_with_bg, encoding="utf-8")
 file_path.name
