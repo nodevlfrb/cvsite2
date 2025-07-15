@@ -73,13 +73,8 @@
       transform: translateY(-5px);
     }
 
-    .card.large {
-      grid-column: span 2;
-    }
-
-    .card.tall {
-      grid-row: span 2;
-    }
+    .card.large { grid-column: span 2; }
+    .card.tall { grid-row: span 2; }
 
     .card img {
       width: 100%;
@@ -120,7 +115,7 @@
       margin: 0 10px;
     }
 
-    /* Language switcher styling */
+    /* Language switcher */
     #lang-switch {
       position: fixed;
       bottom: 20px;
@@ -158,6 +153,7 @@
       <p lang="en">Professional portfolio – CV, experience & visuals</p>
       <p lang="fr">Portfolio professionnel – CV, expériences & visuels</p>
     </header>
+
     <div class="grid">
       <div class="card large">
         <img src="https://source.unsplash.com/800x400/?reception" alt="Reception" />
@@ -184,8 +180,8 @@
         <div class="card-content">
           <h2 lang="en">About Me</h2>
           <h2 lang="fr">À propos</h2>
-          <p lang="en">Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.</p>
-          <p lang="fr">Passionné par l’ingénierie, l’innovation et le monde maritime. Curieux et engagé dans la collaboration interdisciplinaire.</p>
+          <p lang="en">Passionate about engineering, innovation, and the maritime world.</p>
+          <p lang="fr">Passionné par l’ingénierie, l’innovation et le monde maritime.</p>
         </div>
       </div>
       <div class="card tall">
@@ -218,12 +214,12 @@
         </div>
       </div>
     </div>
+
     <footer>
       <p>© 2025 Noé DÉVERCHÈRE — <a href="mailto:noe.deverchere@etu.isae-ensma.fr">Contact me</a></p>
     </footer>
   </div>
 
-  <!-- Language Switcher -->
   <div id="lang-switch">
     <button class="lang-button" onclick="setLang('en')" id="btn-en">🇬🇧 English</button>
     <button class="lang-button" onclick="setLang('fr')" id="btn-fr">🇫🇷 Français</button>
@@ -239,8 +235,10 @@
       localStorage.setItem('preferredLang', lang);
     }
 
-    const defaultLang = localStorage.getItem('preferredLang') || 'en';
-    setLang(defaultLang);
+    window.addEventListener('DOMContentLoaded', () => {
+      const defaultLang = localStorage.getItem('preferredLang') || 'en';
+      setLang(defaultLang);
+    });
   </script>
 </body>
 </html>
