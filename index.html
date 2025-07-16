@@ -6,17 +6,15 @@
   <title>Noé DÉVERCHÈRE - Portfolio</title>
   <style>
     @font-face {
-      font-family: 'EB Garamond';
-      src: url('fonts/EBGaramond08-Regular.ttf') format('truetype');
+      font-family: 'Computer Modern Sans';
+      src: url('fonts/cmunss.ttf') format('truetype');
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: 'EB Garamond', serif;
+      font-family: 'Computer Modern Sans', sans-serif;
       background: url('images/try1background.png') no-repeat center center fixed;
       background-size: cover;
       color: #495057;
@@ -26,7 +24,7 @@
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       background: rgba(0, 0, 0, 0.25);
       z-index: -1;
     }
@@ -69,10 +67,7 @@
       transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
+    .card:hover { transform: translateY(-5px); }
     .card.large { grid-column: span 2; }
     .card.tall { grid-row: span 2; }
 
@@ -82,14 +77,8 @@
       object-fit: cover;
     }
 
-    .card-content {
-      padding: 1rem;
-    }
-
-    .card-content h2 {
-      margin-top: 0;
-      color: #014f86;
-    }
+    .card-content { padding: 1rem; }
+    .card-content h2 { margin-top: 0; color: #014f86; }
 
     .cv-button {
       display: inline-block;
@@ -115,29 +104,27 @@
       margin: 0 10px;
     }
 
-    /* Language switcher */
     #lang-switch {
       position: fixed;
       bottom: 20px;
       left: 20px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255,255,255,0.9);
       border-radius: 30px;
-      padding: 4px;
+      padding: 5px;
       display: flex;
-      gap: 4px;
+      gap: 6px;
       z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
     .lang-button {
       border: none;
-      border-radius: 30px;
-      padding: 8px 16px;
+      border-radius: 20px;
+      padding: 6px 14px;
       font-size: 0.9rem;
       cursor: pointer;
-      font-family: 'EB Garamond', serif;
-      transition: background 0.2s ease;
       background: none;
+      font-family: 'Computer Modern Sans', sans-serif;
     }
 
     .lang-button.active {
@@ -156,7 +143,7 @@
 
     <div class="grid">
       <div class="card large">
-        <img src="https://source.unsplash.com/800x400/?reception" alt="Reception" />
+        <img src="https://source.unsplash.com/800x400/?reception" />
         <div class="card-content">
           <h2 lang="en">Experience at Hôtel Alamanda</h2>
           <h2 lang="fr">Expérience à l'Hôtel Alamanda</h2>
@@ -174,7 +161,7 @@
         </div>
       </div>
       <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?travel" alt="Travel" />
+        <img src="https://source.unsplash.com/600x900/?travel" />
       </div>
       <div class="card">
         <div class="card-content">
@@ -185,7 +172,7 @@
         </div>
       </div>
       <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?aerospace" alt="Aerospace" />
+        <img src="https://source.unsplash.com/600x900/?aerospace" />
       </div>
       <div class="card large">
         <div class="card-content">
@@ -204,7 +191,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?client-service" alt="Client Service" />
+        <img src="https://source.unsplash.com/600x400/?client-service" />
       </div>
       <div class="card">
         <div class="card-content">
@@ -236,8 +223,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      const defaultLang = localStorage.getItem('preferredLang') || 'en';
-      setLang(defaultLang);
+      setLang(localStorage.getItem('preferredLang') || 'en');
     });
   </script>
 </body>
