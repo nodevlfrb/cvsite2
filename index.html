@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noé DÉVERCHÈRE - Portfolio</title>
+  <meta name="description" content="Portfolio of Noé DÉVERCHÈRE – CV, experience, and visuals.">
   <style>
     @font-face {
       font-family: 'EB Garamond';
@@ -22,6 +23,12 @@
       color: #495057;
     }
 
+    .overlay {
+      min-height: 100vh;
+      background: rgba(255,255,255,0.92); /* Optional: subtle overlay for readability */
+      padding-bottom: 40px;
+    }
+
     header {
       text-align: center;
       color: #014f86;
@@ -38,7 +45,7 @@
       color: #495057;
     }
 
-    .grid {
+    main .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
@@ -112,54 +119,56 @@
       <h1>Noé DÉVERCHÈRE</h1>
       <p>Professional portfolio – CV, experience & visuals</p>
     </header>
-    <div class="grid">
-      <div class="card large">
-        <img src="https://source.unsplash.com/800x400/?reception" alt="Reception" />
-        <div class="card-content">
-          <h2>Experience at Hôtel Alamanda</h2>
-          <p>Internship in La Réunion – Front desk, client reception, operations support.</p>
+    <main>
+      <div class="grid">
+        <div class="card large">
+          <img src="https://source.unsplash.com/800x400/?reception" alt="Front desk at Hôtel Alamanda" />
+          <div class="card-content">
+            <h2>Experience at Hôtel Alamanda</h2>
+            <p>Internship in La Réunion – Front desk, client reception, operations support.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2>My CV</h2>
+            <p>Download my CV to discover my full professional background.</p>
+            <a href="cv_victoria.pdf" class="cv-button" download>Download CV</a>
+          </div>
+        </div>
+        <div class="card tall">
+          <img src="https://source.unsplash.com/600x900/?travel" alt="Travel adventure" />
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2>About Me</h2>
+            <p>Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.</p>
+          </div>
+        </div>
+        <div class="card tall">
+          <img src="https://source.unsplash.com/600x900/?aerospace" alt="Aerospace engineering" />
+        </div>
+        <div class="card large">
+          <div class="card-content">
+            <h2>Various Experiences</h2>
+            <ul>
+              <li>Naval architecture</li>
+              <li>Python & Jupyter tools</li>
+              <li>Fluid mechanics & cavitation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://source.unsplash.com/600x400/?client-service" alt="Client service interaction" />
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2>Contact</h2>
+            <p>📧 <a href="mailto:noe.deverchere@etu.isae-ensma.fr">noe.deverchere@etu.isae-ensma.fr</a><br />
+               💼 <a href="https://www.linkedin.com/in/noe-deverchere">LinkedIn</a></p>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-content">
-          <h2>My CV</h2>
-          <p>Download my CV to discover my full professional background.</p>
-          <a href="cv_victoria.pdf" class="cv-button" download>Download CV</a>
-        </div>
-      </div>
-      <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?travel" alt="Travel" />
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h2>About Me</h2>
-          <p>Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.</p>
-        </div>
-      </div>
-      <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?aerospace" alt="Aerospace" />
-      </div>
-      <div class="card large">
-        <div class="card-content">
-          <h2>Various Experiences</h2>
-          <ul>
-            <li>Naval architecture</li>
-            <li>Python & Jupyter tools</li>
-            <li>Fluid mechanics & cavitation</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/600x400/?client-service" alt="Client Service" />
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h2>Contact</h2>
-          <p>📧 <a href="mailto:noe.deverchere@etu.isae-ensma.fr">noe.deverchere@etu.isae-ensma.fr</a><br />
-             💼 <a href="https://www.linkedin.com/in/noe-deverchere">LinkedIn</a></p>
-        </div>
-      </div>
-    </div>
+    </main>
     <footer>
       <p>© 2025 Noé DÉVERCHÈRE — <a href="mailto:noe.deverchere@etu.isae-ensma.fr">Contact me</a></p>
     </footer>
