@@ -6,33 +6,20 @@
   <title>Noé DÉVERCHÈRE - Portfolio</title>
   <style>
     @font-face {
-      font-family: 'Computer Modern Sans';
-      src: url('fonts/cmunss.ttf') format('truetype');
+      font-family: 'EB Garamond';
+      src: url('fonts/EBGaramond08-Regular.ttf') format('truetype');
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: 'Computer Modern Sans', sans-serif;
+      font-family: 'EB Garamond', serif;
       background: url('images/try1background.png') no-repeat center center fixed;
       background-size: cover;
       color: #495057;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.25);
-      z-index: -1;
-    }
-
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.88);
-      min-height: 100vh;
-      padding: 40px 5vw;
     }
 
     header {
@@ -67,9 +54,17 @@
       transition: transform 0.3s ease;
     }
 
-    .card:hover { transform: translateY(-5px); }
-    .card.large { grid-column: span 2; }
-    .card.tall { grid-row: span 2; }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card.large {
+      grid-column: span 2;
+    }
+
+    .card.tall {
+      grid-row: span 2;
+    }
 
     .card img {
       width: 100%;
@@ -77,8 +72,14 @@
       object-fit: cover;
     }
 
-    .card-content { padding: 1rem; }
-    .card-content h2 { margin-top: 0; color: #014f86; }
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h2 {
+      margin-top: 0;
+      color: #014f86;
+    }
 
     .cv-button {
       display: inline-block;
@@ -103,95 +104,53 @@
       text-decoration: none;
       margin: 0 10px;
     }
-
-    #lang-switch {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 30px;
-      padding: 5px;
-      display: flex;
-      gap: 6px;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .lang-button {
-      border: none;
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      background: none;
-      font-family: 'Computer Modern Sans', sans-serif;
-    }
-
-    .lang-button.active {
-      background-color: #2ec4b6;
-      color: white;
-    }
   </style>
 </head>
 <body>
   <div class="overlay">
     <header>
       <h1>Noé DÉVERCHÈRE</h1>
-      <p lang="en">Professional portfolio – CV, experience & visuals</p>
-      <p lang="fr">Portfolio professionnel – CV, expériences & visuels</p>
+      <p>Professional portfolio – CV, experience & visuals</p>
     </header>
-
     <div class="grid">
       <div class="card large">
-        <img src="https://source.unsplash.com/800x400/?reception" />
+        <img src="https://source.unsplash.com/800x400/?reception" alt="Reception" />
         <div class="card-content">
-          <h2 lang="en">Experience at Hôtel Alamanda</h2>
-          <h2 lang="fr">Expérience à l'Hôtel Alamanda</h2>
-          <p lang="en">Internship in La Réunion – Front desk, client reception, operations support.</p>
-          <p lang="fr">Stage à La Réunion – Accueil, réception, support opérationnel.</p>
+          <h2>Experience at Hôtel Alamanda</h2>
+          <p>Internship in La Réunion – Front desk, client reception, operations support.</p>
         </div>
       </div>
       <div class="card">
         <div class="card-content">
-          <h2 lang="en">My CV</h2>
-          <h2 lang="fr">Mon CV</h2>
-          <p lang="en">Download my CV to discover my full professional background.</p>
-          <p lang="fr">Téléchargez mon CV pour découvrir mon parcours complet.</p>
+          <h2>My CV</h2>
+          <p>Download my CV to discover my full professional background.</p>
           <a href="cv_victoria.pdf" class="cv-button" download>Download CV</a>
         </div>
       </div>
       <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?travel" />
+        <img src="https://source.unsplash.com/600x900/?travel" alt="Travel" />
       </div>
       <div class="card">
         <div class="card-content">
-          <h2 lang="en">About Me</h2>
-          <h2 lang="fr">À propos</h2>
-          <p lang="en">Passionate about engineering, innovation, and the maritime world.</p>
-          <p lang="fr">Passionné par l’ingénierie, l’innovation et le monde maritime.</p>
+          <h2>About Me</h2>
+          <p>Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.</p>
         </div>
       </div>
       <div class="card tall">
-        <img src="https://source.unsplash.com/600x900/?aerospace" />
+        <img src="https://source.unsplash.com/600x900/?aerospace" alt="Aerospace" />
       </div>
       <div class="card large">
         <div class="card-content">
-          <h2 lang="en">Various Experiences</h2>
-          <h2 lang="fr">Expériences variées</h2>
-          <ul lang="en">
+          <h2>Various Experiences</h2>
+          <ul>
             <li>Naval architecture</li>
             <li>Python & Jupyter tools</li>
             <li>Fluid mechanics & cavitation</li>
           </ul>
-          <ul lang="fr">
-            <li>Architecture navale</li>
-            <li>Outils Python & Jupyter</li>
-            <li>Mécanique des fluides & cavitation</li>
-          </ul>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?client-service" />
+        <img src="https://source.unsplash.com/600x400/?client-service" alt="Client Service" />
       </div>
       <div class="card">
         <div class="card-content">
@@ -201,30 +160,9 @@
         </div>
       </div>
     </div>
-
     <footer>
       <p>© 2025 Noé DÉVERCHÈRE — <a href="mailto:noe.deverchere@etu.isae-ensma.fr">Contact me</a></p>
     </footer>
   </div>
-
-  <div id="lang-switch">
-    <button class="lang-button" onclick="setLang('en')" id="btn-en">🇬🇧 English</button>
-    <button class="lang-button" onclick="setLang('fr')" id="btn-fr">🇫🇷 Français</button>
-  </div>
-
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('[lang]').forEach(el => {
-        el.style.display = (el.getAttribute('lang') === lang) ? '' : 'none';
-      });
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
-      localStorage.setItem('preferredLang', lang);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      setLang(localStorage.getItem('preferredLang') || 'en');
-    });
-  </script>
 </body>
 </html>
