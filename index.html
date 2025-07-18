@@ -25,7 +25,7 @@
 
     .overlay {
       min-height: 100vh;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.75);
       padding: 0 5vw 40px 5vw;
     }
 
@@ -55,7 +55,7 @@
       gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0px 30px 0px
+      padding: 0px 30px 0px;
     }
 
     .card {
@@ -106,6 +106,10 @@
       font-weight: bold;
     }
 
+    .cv-button:hover {
+      background-color: #06b6d4;
+    }
+
     footer {
       text-align: center;
       margin-top: 40px;
@@ -117,6 +121,98 @@
       color: #014f86;
       text-decoration: none;
       margin: 0 10px;
+    }
+
+    /* Language switch style */
+    .lang-switch-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .switch > span {
+      position: absolute;
+      top: 13px;
+      pointer-events: none;
+      font-family: 'EB Garamond', serif;
+      font-weight: bold;
+      font-size: 13px;
+      width: 50%;
+      text-align: center;
+    }
+
+    .switch > span.on {
+      left: 0;
+      padding-left: 2px;
+      color: #014f86;
+    }
+
+    .switch > span.off {
+      right: 0;
+      padding-right: 4px;
+      color: #fff;
+    }
+
+    input.check-toggle-round-flat:checked ~ .off {
+      color: #014f86;
+    }
+
+    input.check-toggle-round-flat:checked ~ .on {
+      color: white;
+    }
+
+    .check-toggle {
+      position: absolute;
+      margin-left: -9999px;
+      visibility: hidden;
+    }
+
+    .check-toggle + label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      width: 95px;
+      height: 34px;
+      background-color: #2ec4b6;
+      border-radius: 60px;
+    }
+
+    .check-toggle + label:before,
+    .check-toggle + label:after {
+      display: block;
+      position: absolute;
+      content: "";
+    }
+
+    .check-toggle + label:before {
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: #2ec4b6;
+      border-radius: 60px;
+    }
+
+    .check-toggle + label:after {
+      top: 4px;
+      left: 4px;
+      bottom: 4px;
+      width: 45px;
+      background-color: #fff;
+      border-radius: 52px;
+      transition: margin 0.2s;
+    }
+
+    input.check-toggle-round-flat:checked + label:after {
+      margin-left: 45px;
     }
   </style>
 </head>
@@ -180,5 +276,94 @@
       <p>© 2025 Noé DÉVERCHÈRE — <a href="mailto:noe.deverchere@etu.isae-ensma.fr">Contact me</a></p>
     </footer>
   </div>
+
+  <!-- LANG SWITCH -->
+  <div class="lang-switch-container">
+    <div class="switch">
+      <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+      <label for="language-toggle"></label>
+      <span class="on">FR</span>
+      <span class="off">EN</span>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        header: "Professional portfolio – CV, experience & visuals",
+        experience: "Experience at Hôtel Alamanda",
+        experienceText: "Internship in La Réunion – Front desk, client reception, operations support.",
+        cv: "My CV",
+        download: "Download my CV to discover my full professional background.",
+        downloadBtn: "Download CV",
+        about: "About Me",
+        aboutText: "Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.",
+        various: "Various Experiences",
+        list: ["Naval architecture", "Python & Jupyter tools", "Fluid mechanics & cavitation"],
+        contact: "Contact",
+        contactText: "📧 <a href='mailto:noe.deverchere@etu.isae-ensma.fr'>noe.deverchere@etu.isae-ensma.fr</a><br />💼 <a href='https://www.linkedin.com/in/noe-deverchere'>LinkedIn</a>",
+        footer: "© 2025 Noé DÉVERCHÈRE — Contact me"
+      },
+      fr: {
+        header: "Portfolio professionnel – CV, expériences & visuels",
+        experience: "Expérience à l’Hôtel Alamanda",
+        experienceText: "Stage à La Réunion – Accueil client, réception, soutien opérationnel.",
+        cv: "Mon CV",
+        download: "Téléchargez mon CV pour découvrir mon parcours complet.",
+        downloadBtn: "Télécharger le CV",
+        about: "À propos de moi",
+        aboutText: "Passionné par l’ingénierie, l’innovation et le monde maritime. Curieux et engagé dans la collaboration interdisciplinaire.",
+        various: "Expériences variées",
+        list: ["Architecture navale", "Python & Jupyter", "Mécanique des fluides & cavitation"],
+        contact: "Contact",
+        contactText: "📧 <a href='mailto:noe.deverchere@etu.isae-ensma.fr'>noe.deverchere@etu.isae-ensma.fr</a><br />💼 <a href='https://www.linkedin.com/in/noe-deverchere'>LinkedIn</a>",
+        footer: "© 2025 Noé DÉVERCHÈRE — Me contacter"
+      }
+    };
+
+    const elements = {
+      header: document.querySelector("header p"),
+      experience: document.querySelectorAll("h2")[0],
+      experienceText: document.querySelectorAll(".card-content p")[0],
+      cv: document.querySelectorAll("h2")[1],
+      download: document.querySelectorAll(".card-content p")[1],
+      downloadBtn: document.querySelector(".cv-button"),
+      about: document.querySelectorAll("h2")[2],
+      aboutText: document.querySelectorAll(".card-content p")[2],
+      various: document.querySelectorAll("h2")[3],
+      list: document.querySelectorAll(".card.large ul li"),
+      contact: document.querySelectorAll("h2")[4],
+      contactText: document.querySelectorAll(".card-content p")[3],
+      footer: document.querySelector("footer p")
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      elements.header.innerText = t.header;
+      elements.experience.innerText = t.experience;
+      elements.experienceText.innerText = t.experienceText;
+      elements.cv.innerText = t.cv;
+      elements.download.innerText = t.download;
+      elements.downloadBtn.innerText = t.downloadBtn;
+      elements.about.innerText = t.about;
+      elements.aboutText.innerText = t.aboutText;
+      elements.various.innerText = t.various;
+      elements.list.forEach((li, i) => li.innerText = t.list[i]);
+      elements.contact.innerText = t.contact;
+      elements.contactText.innerHTML = t.contactText;
+      elements.footer.innerHTML = t.footer;
+      localStorage.setItem("language", lang);
+      document.getElementById("language-toggle").checked = (lang === "fr");
+    }
+
+    document.getElementById("language-toggle").addEventListener("change", function () {
+      const lang = this.checked ? "fr" : "en";
+      setLanguage(lang);
+    });
+
+    // Initialisation à partir du localStorage
+    const savedLang = localStorage.getItem("language") || "en";
+    setLanguage(savedLang);
+  </script>
 </body>
 </html>
