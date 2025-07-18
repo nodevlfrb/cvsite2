@@ -235,7 +235,7 @@
           <div class="card-content">
             <h2>My CV</h2>
             <p>Download my CV to discover my full professional background.</p>
-            <a href="cv_victoria.pdf" class="cv-button" download>Download CV</a>
+            <a href="#" class="cv-button" download>CV</a>
           </div>
         </div>
         <div class="card tall">
@@ -345,6 +345,7 @@
       elements.cv.innerText = t.cv;
       elements.download.innerText = t.download;
       elements.downloadBtn.innerText = t.downloadBtn;
+      elements.downloadBtn.setAttribute("href", lang === "fr" ? "resources/cv_fr.pdf" : "resources/cv_en.pdf");
       elements.about.innerText = t.about;
       elements.aboutText.innerText = t.aboutText;
       elements.various.innerText = t.various;
