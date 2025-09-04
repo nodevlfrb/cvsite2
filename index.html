@@ -219,60 +219,60 @@
   <div class="overlay">
     <header>
       <h1>Noé DÉVERCHÈRE</h1>
-      <p>Professional portfolio</p>
+      <p data-translate="header">Professional portfolio</p>
     </header>
     <main>
       <div class="grid">
         <div class="card large">
           <img src="images/tu_delft_aerial.jpeg" />
           <div class="card-content">
-            <h2>Experience at TU Delft</h2>
-            <p>My last internship: assistant of a PhD student in fluid mechanics at TU Delft, Netherlands</p>
+            <h2 data-translate="experience">Experience at TU Delft</h2>
+            <p data-translate="experienceText">My last internship: assistant of a PhD student in fluid mechanics at TU Delft, Netherlands</p>
           </div>
         </div>
         <div class="card">
           <div class="card-content">
-            <h2>My CV</h2>
-            <p>Download my CV to discover my full professional background.</p>
-            <a href="#" class="cv-button" download>CV</a>
+            <h2 data-translate="cv">My CV</h2>
+            <p data-translate="download">Download my CV to discover my full professional background.</p>
+            <a href="#" class="cv-button" data-translate="downloadBtn" download>CV</a>
           </div>
         </div>
         <div class="card tall">
-          <img src="https://source.unsplash.com/600x900/?travel" alt="Travel adventure" />
+          <img src="images/travel_adventure.jpg" alt="Travel adventure" />
         </div>
         <div class="card">
           <div class="card-content">
-            <h2>About Me</h2>
-            <p>Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.</p>
+            <h2 data-translate="about">About Me</h2>
+            <p data-translate="aboutText">Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.</p>
           </div>
         </div>
         <div class="card tall">
-          <img src="https://source.unsplash.com/600x900/?aerospace" alt="Aerospace engineering" />
+          <img src="images/aerospace_engineering.jpg" alt="Aerospace engineering" />
         </div>
         <div class="card large">
           <div class="card-content">
-            <h2>Various Experiences</h2>
+            <h2 data-translate="various">Various Experiences</h2>
             <ul>
-              <li>Naval architecture</li>
-              <li>Python & Jupyter tools</li>
-              <li>Fluid mechanics & cavitation</li>
+              <li data-translate="list1">Naval architecture</li>
+              <li data-translate="list2">Python & Jupyter tools</li>
+              <li data-translate="list3">Fluid mechanics & cavitation</li>
             </ul>
           </div>
         </div>
         <div class="card">
-          <img src="https://source.unsplash.com/600x400/?client-service" alt="Client service interaction" />
+          <img src="images/client_service.jpg" alt="Client service interaction" />
         </div>
         <div class="card">
           <div class="card-content">
-            <h2>Contact</h2>
-            <p>📧 <a href="mailto:noe.deverchere@etu.isae-ensma.fr">noe.deverchere@etu.isae-ensma.fr</a><br />
+            <h2 data-translate="contact">Contact</h2>
+            <p data-translate="contactText">📧 <a href="mailto:noe.deverchere@etu.isae-ensma.fr">noe.deverchere@etu.isae-ensma.fr</a><br />
                💼 <a href="https://www.linkedin.com/in/no%C3%A9-d%C3%A9verch%C3%A8re-9b4433256/">LinkedIn</a></p>
           </div>
         </div>
       </div>
     </main>
     <footer>
-      <p>© 2025 Noé DÉVERCHÈRE — <a href="mailto:noe.deverchere@etu.isae-ensma.fr">Contact me</a></p>
+      <p data-translate="footer">© 2025 Noé DÉVERCHÈRE — <a href="mailto:noe.deverchere@etu.isae-ensma.fr">Contact me</a></p>
     </footer>
   </div>
 
@@ -286,9 +286,10 @@
   </div>
 
   <script>
+    // All translations in one place
     const translations = {
       en: {
-        header: "Professional portfolio – CV, experience & visuals",
+        header: "Professional portfolio",
         experience: "Experience at TU Delft",
         experienceText: "My last internship: assistant of a PhD student in fluid mechanics at TU Delft, Netherlands",
         cv: "My CV",
@@ -297,71 +298,74 @@
         about: "About Me",
         aboutText: "Passionate about engineering, innovation, and the maritime world. Curious and committed to interdisciplinary collaboration.",
         various: "Various Experiences",
-        list: ["Naval architecture", "Python & Jupyter tools", "Fluid mechanics & cavitation"],
+        list1: "Naval architecture",
+        list2: "Python & Jupyter tools",
+        list3: "Fluid mechanics & cavitation",
         contact: "Contact",
         contactText: "📧 <a href='mailto:noe.deverchere@etu.isae-ensma.fr'>noe.deverchere@etu.isae-ensma.fr</a><br />💼 <a href='https://www.linkedin.com/in/noe-deverchere'>LinkedIn</a>",
         footer: "© 2025 Noé DÉVERCHÈRE — Contact me"
       },
       fr: {
-        header: "Portfolio professionnel – CV, expériences & visuels",
+        header: "Portfolio professionnel",
         experience: "Expérience à TU Delft",
-        experienceText: "Stage à La Réunion – Accueil client, réception, soutien opérationnel.",
+        experienceText: "Mon dernier stage : assistant d'un doctorant en mécanique des fluides à TU Delft, Pays-Bas",
         cv: "Mon CV",
         download: "Téléchargez mon CV pour découvrir mon parcours complet.",
         downloadBtn: "Télécharger le CV",
         about: "À propos de moi",
-        aboutText: "Passionné par l’ingénierie, l’innovation et le monde maritime. Curieux et engagé dans la collaboration interdisciplinaire.",
+        aboutText: "Passionné par l'ingénierie, l'innovation et le monde maritime. Curieux et engagé dans la collaboration interdisciplinaire.",
         various: "Expériences variées",
-        list: ["Architecture navale", "Python & Jupyter", "Mécanique des fluides & cavitation"],
+        list1: "Architecture navale",
+        list2: "Outils Python & Jupyter",
+        list3: "Mécanique des fluides & cavitation",
         contact: "Contact",
         contactText: "📧 <a href='mailto:noe.deverchere@etu.isae-ensma.fr'>noe.deverchere@etu.isae-ensma.fr</a><br />💼 <a href='https://www.linkedin.com/in/noe-deverchere'>LinkedIn</a>",
         footer: "© 2025 Noé DÉVERCHÈRE — Me contacter"
       }
     };
 
-    const elements = {
-      header: document.querySelector("header p"),
-      experience: document.querySelectorAll("h2")[0],
-      experienceText: document.querySelectorAll(".card-content p")[0],
-      cv: document.querySelectorAll("h2")[1],
-      download: document.querySelectorAll(".card-content p")[1],
-      downloadBtn: document.querySelector(".cv-button"),
-      about: document.querySelectorAll("h2")[2],
-      aboutText: document.querySelectorAll(".card-content p")[2],
-      various: document.querySelectorAll("h2")[3],
-      list: document.querySelectorAll(".card.large ul li"),
-      contact: document.querySelectorAll("h2")[4],
-      contactText: document.querySelectorAll(".card-content p")[3],
-      footer: document.querySelector("footer p")
-    };
-
     function setLanguage(lang) {
-      const t = translations[lang];
-      elements.header.innerText = t.header;
-      elements.experience.innerText = t.experience;
-      elements.experienceText.innerText = t.experienceText;
-      elements.cv.innerText = t.cv;
-      elements.download.innerText = t.download;
-      elements.downloadBtn.innerText = t.downloadBtn;
-      elements.downloadBtn.setAttribute("href", lang === "fr" ? "resources/cv_fr.pdf" : "resources/cv_en.pdf");
-      elements.about.innerText = t.about;
-      elements.aboutText.innerText = t.aboutText;
-      elements.various.innerText = t.various;
-      elements.list.forEach((li, i) => li.innerText = t.list[i]);
-      elements.contact.innerText = t.contact;
-      elements.contactText.innerHTML = t.contactText;
-      elements.footer.innerHTML = t.footer;
-      localStorage.setItem("language", lang);
-      document.getElementById("language-toggle").checked = (lang === "en");
+      // Update all elements with data-translate attribute
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.value = translations[lang][key];
+          } else if (element.hasAttribute('placeholder')) {
+            element.setAttribute('placeholder', translations[lang][key]);
+          } else {
+            // Handle HTML content for specific elements
+            if (key === 'contactText') {
+              element.innerHTML = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          }
+        }
+      });
+      
+      // Update CV download link based on language
+      const cvButton = document.querySelector('.cv-button');
+      cvButton.setAttribute('href', lang === 'fr' ? 'resources/cv_fr.pdf' : 'resources/cv_en.pdf');
+      
+      // Update toggle state
+      document.getElementById('language-toggle').checked = (lang === 'en');
+      
+      // Save language preference
+      localStorage.setItem('language', lang);
     }
 
-    document.getElementById("language-toggle").addEventListener("change", function () {
-      const lang = this.checked ? "en" : "fr";
-      setLanguage(lang);
+    // Initialize language
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('language') || 'en';
+      setLanguage(savedLang);
+      
+      // Add event listener for language toggle
+      document.getElementById('language-toggle').addEventListener('change', function() {
+        const lang = this.checked ? 'en' : 'fr';
+        setLanguage(lang);
+      });
     });
-
-    const savedLang = localStorage.getItem("language") || "en";
-    setLanguage(savedLang);
   </script>
 </body>
 </html>
